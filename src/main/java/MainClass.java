@@ -16,15 +16,25 @@ public class MainClass {
         driver.manage().window().maximize();
 
         driver.get("https://www.onliner.by/");
-      //  driver.findElement(By.xpath("//div[@class='b-top-menu']//ul[@class='b-main-navigation']//a[@class='b-main-navigation__link']")).click();
+
         WebElement link = driver.findElement(By.xpath("//div[@class='b-top-menu']//ul[@class='b-main-navigation']//a[@class='b-main-navigation__link']"));
         System.out.println(link.getText());
         link.click();
+
+        WebElement linkEl = driver.findElement(By.xpath("//span[text()='Электроника']"));
+        System.out.println(linkEl.getText());
+        linkEl.click();
+
+        WebElement linkTech = driver.findElement(By.xpath("//span[text()='Бытовая техника']"));
+        System.out.println(linkTech.getText());
+        linkTech.click();
+
+
        // driver.get("http://en.wikipedia.org");
       //  driver.findElement(By.xpath("//input[@id='searchButton']")).click();
 
       //driver.navigate().back();
-     // driver.navigate().forward();
+     // driver.navigate().forward();в
      //   WebElement signIn = driver.findElement(By.xpath("//a[text() = 'Создать новый аккаунт']"));
       //  driver.findElement(By.xpath("//a[text() = 'Создать новый аккаунт']")).click();
       //  driver.navigate().refresh();
@@ -47,6 +57,6 @@ public class MainClass {
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
 
-        driver.quit();
+        //driver.quit();
     }
 }
