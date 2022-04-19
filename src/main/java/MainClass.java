@@ -25,9 +25,17 @@ public class MainClass {
         System.out.println(linkEl.getText());
         linkEl.click();
 
+        driver.findElement(By.xpath("class='b-tile-grad'")).submit();
+
         WebElement linkTech = driver.findElement(By.xpath("//span[text()='Бытовая техника']"));
         System.out.println(linkTech.getText());
         linkTech.click();
+
+        WebElement linkFd = driver.findElement(By.xpath("//span[text()='Еда']"));
+        System.out.println(linkFd.getText());
+        linkFd.click();
+
+
 
 
        // driver.get("http://en.wikipedia.org");
