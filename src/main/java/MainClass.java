@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class MainClass {
@@ -27,30 +28,43 @@ public class MainClass {
         System.out.println(linkEl.getText());
         linkEl.click();
 
+        List<WebElement> widgetsEl = driver.findElements(By.cssSelector("div.catalog-navigation-list__category[style='display: block;'] .tiles-widget"));
+        System.out.println(widgetsEl.size());
+        if (widgetsEl.size()==6)
+        {
+            System.out.println("Success!");
+        }
+        else
+            System.out.println("Fail!");
+
         //Бытовая техника//
         WebElement linkTech = driver.findElement(By.xpath("//span[text()='Бытовая техника']"));
         System.out.println(linkTech.getText());
         linkTech.click();
+
+        List<WebElement> widgetsTech = driver.findElements(By.cssSelector("div.catalog-navigation-list__category[style='display: block;'] .tiles-widget"));
+        System.out.println(widgetsTech.size());
+        if (widgetsTech.size()==6)
+        {
+            System.out.println("Success!");
+        }
+        else
+            System.out.println("Fail!");
 
         //Еда//
         WebElement linkFd = driver.findElement(By.xpath("//span[text()='Еда']"));
         System.out.println(linkFd.getText());
         linkFd.click();
 
+        List<WebElement> widgetsFd = driver.findElements(By.cssSelector("div.catalog-navigation-list__category[style='display: block;'] .tiles-widget"));
+        System.out.println(widgetsFd.size());
+        if (widgetsFd.size()==8)
+        {
+            System.out.println("Success!");
+        }
+        else
+            System.out.println("Fail!");
 
-      //  driver.get("https://github.com/");
-     //   WebElement button = driver.findElement(By.xpath("//form[@class='mx-auto mx-md-0 col-5-max js-signup-form position-relative z-2']//button"));
-      //  if (button.getText().equals("Sign up for GitHub")) {
-      //      System.out.println("Success!");
-      //  }
-       // else
-       // System.out.println("Fail!");
-        //System.out.println("Button text is: " + button.getText());
-       // button.submit();
-
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-
-        //driver.quit();
+        driver.quit();
     }
 }
